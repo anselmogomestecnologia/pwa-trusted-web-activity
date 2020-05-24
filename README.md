@@ -1,6 +1,6 @@
 
 
-# Enviando seu PWA para a Play Store usando Trusted Web Activity
+# Publicando seu PWA na Play Store usando Trusted Web Activity
 
 O uso dos recursos deste respositório parte dos seguintes pressupostos:
 
