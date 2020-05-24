@@ -17,32 +17,43 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
-        applicationId "io.fireship.app"
+        applicationId "br.com.anselmo"
+        manifestPlaceholders = [
+                hostName: "anselmo.com.br",
+                defaultUrl: "https://www.anselmo.com.br?origem=aplicativo",
+                launcherName: "Anselmo Gomes",
+                assetStatements: '[{ "relation": ["delegate_permission/common.handle_all_urls"], ' + '"target": {"namespace": "web", "site": "https://www.anselmo.com.br"}}}]'
+        ]
+        resValue "color", "colorPrimary", "#171717"
+        resValue "color", "colorPrimaryDark", "#171717"
+        resValue "color", "colorAccent", "#FF9900"
         minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 2
-        versionName "1.1"
+        targetSdkVersion 29
+        versionCode 4
+        versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [
                 // The hostname is used when building the intent-filter, so the TWA is able to
                 // handle Intents to open https://svgomg.firebaseapp.com.
-                hostName: "fireship.io",
-                defaultUrl: "https://fireship.io",
-                launcherName: "Fireship",
+                hostName: "anselmo.com.br",
+                defaultUrl: "https://www.anselmo.com.br",
+                launcherName: "Anselmo Gomes",
                 // This variable below expresses the relationship between the app and the site,
                 // as documented in the TWA documentation at
                 // https://developers.google.com/web/updates/2017/10/using-twa#set_up_digital_asset_links_in_an_android_app
                 // and is injected into the AndroidManifest.xml
                 assetStatements: '[{ "relation": ["delegate_permission/common.handle_all_urls"], ' +
-                        '"target": {"namespace": "web", "site": "https://fireship.io"}}]'
+                        '"target": {"namespace": "web", "site": "https://www.anselmo.com.br"}}]'
         ]
 
         // This attribute sets the status bar color for the TWA. It can be either set here or in
         // `res/values/colors.xml`. Setting in both places is an error and the app will not
         // compile. If not set, the status bar color defaults to #FFFFFF - white.
-        resValue "color", "colorPrimary", "#272838"
+        resValue "color", "colorPrimary", "#171717"
+        resValue "color", "colorPrimaryDark", "#171717"
+        resValue "color", "colorAccent", "#FF9900"
     }
     buildTypes {
         release {
