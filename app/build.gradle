@@ -35,22 +35,22 @@ android {
         versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [
-                // The hostname is used when building the intent-filter, so the TWA is able to
-                // handle Intents to open https://svgomg.firebaseapp.com.
+                // O hostname é usado para a construção do intent-filter, o que torna possível para seu TWA manipular
+                // o Intents para abrir https://www.anselmo.com.br.
                 hostName: "anselmo.com.br",
                 defaultUrl: "https://www.anselmo.com.br",
                 launcherName: "Anselmo Gomes",
-                // This variable below expresses the relationship between the app and the site,
-                // as documented in the TWA documentation at
+                // As variáveis a seguir expressão a relação entre o aplicativo e o site,
+                // como orientado na documentação do TWA disponível em
                 // https://developers.google.com/web/updates/2017/10/using-twa#set_up_digital_asset_links_in_an_android_app
-                // and is injected into the AndroidManifest.xml
+                // e é injetado no arquivo AndroidManifest.xml
                 assetStatements: '[{ "relation": ["delegate_permission/common.handle_all_urls"], ' +
                         '"target": {"namespace": "web", "site": "https://www.anselmo.com.br"}}]'
         ]
 
-        // This attribute sets the status bar color for the TWA. It can be either set here or in
-        // `res/values/colors.xml`. Setting in both places is an error and the app will not
-        // compile. If not set, the status bar color defaults to #FFFFFF - white.
+        // Estes atributos definem a cor da barra de status do TWA. Eles podem também ser alterados em
+        // `res/values/colors.xml` no entanto não devem ser alterados nos dois locais ou seu aplicativo não compilará. Altere apenas aqui.
+        // Se as cores não forem definidas, a barra de status assumirá a cor padrão #FFFFFF - branco.
         resValue "color", "colorPrimary", "#171717"
         resValue "color", "colorPrimaryDark", "#171717"
         resValue "color", "colorAccent", "#FF9900"
